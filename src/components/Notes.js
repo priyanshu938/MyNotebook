@@ -41,7 +41,7 @@ const Notes = (props) => {
 
   return (
     <>
-      <AddNote showalert={props.showAlert} />
+      <AddNote showAlert={props.showAlert} />
       <button
         ref={ref}
         type="button"
