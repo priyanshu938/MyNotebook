@@ -8,14 +8,13 @@ const Notes = (props) => {
   const context =  useContext(noteContext);
   const { notes, getNotes, editNote } = context;
   let navigate = useNavigate();
-  const authToken=localStorage.getItem('token')
-  console.log(authToken)
+  console.log(localStorage.getItem('token'))
   useEffect(() => {
-    // if (authToken) {
+    if (localStorage.getItem('token')) {
       getNotes();
-    // } else {
-      // navigate("/login");
-    // }
+    } else {
+      navigate("/login");
+    }
     // eslint-disable-next-line
   }, []);
   const ref = useRef(null);
