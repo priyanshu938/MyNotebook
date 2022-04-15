@@ -48,7 +48,6 @@ router.post('/createuser', [
     res.json({success, authtoken })
 
   } catch (error) {
-    console.error(error.message);
     res.status(500).send("Internal Server Error");
   }
 })
@@ -90,7 +89,6 @@ router.post('/login', [
     res.json({ success, authtoken })
 
   } catch (error) {
-    console.error(error.message);
     res.status(500).send("Internal Server Error");
   }
 
@@ -106,7 +104,6 @@ router.post('/getuser', fetchuser,  async (req, res) => {
     const user = await User.findById(userId).select("-password")
     res.send(user)
   } catch (error) {
-    console.error(error.message);
     res.status(500).send("Internal Server Error");
   }
 })
