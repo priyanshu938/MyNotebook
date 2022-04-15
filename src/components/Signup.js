@@ -36,6 +36,8 @@ const Signup = ({ showAlert }) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
+    <>
+    <h2>Create an account to use MyNotebook application...</h2>
     <div classname="container">
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -100,6 +102,7 @@ const Signup = ({ showAlert }) => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 
