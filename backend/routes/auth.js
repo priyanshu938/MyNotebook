@@ -49,8 +49,8 @@ router.post(
       const authtoken = jwt.sign(data, JWT_SECRET);
 
       // res.json(user)
-      const success=true;
-      res.json({ success,authtoken });
+      const success = true;
+      res.json({ success, authtoken });
     } catch (error) {
       res.status(500).send("Internal Server Error");
     }
@@ -85,12 +85,10 @@ router.post(
       const passwordCompare = await bcrypt.compare(password, user.password);
       if (!passwordCompare) {
         success = false;
-        return res
-          .status(400)
-          .json({
-            success,
-            error: "Please try to login with correct credentials",
-          });
+        return res.status(400).json({
+          success,
+          error: "Please try to login with correct credentials",
+        });
       }
 
       const data = {
