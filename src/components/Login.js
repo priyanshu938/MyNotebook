@@ -18,7 +18,7 @@ const Login = (props) => {
       }),
     });
     const json = await response.json();
-    if (json.success == true) {
+    if (json.success) {
       // Save the auth token and redirect
       window.localStorage.setItem("token", json.authtoken);
       navigate("/");
