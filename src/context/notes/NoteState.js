@@ -45,6 +45,7 @@ const NoteState = (props) => {
         "auth-token": window.localStorage.getItem("token"),
       },
     });
+    console.log(response);
     // const json = response.json();
     //Todo API call
     const newNotes = notes.filter((note) => {
@@ -64,6 +65,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
+    console.log(response);
     let newNotes = JSON.parse(JSON.stringify(notes));
 
     //Logic to edit in client
