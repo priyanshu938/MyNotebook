@@ -13,7 +13,7 @@ const NoteState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("token"),
+        "auth-token": window.localStorage.getItem("token"),
       },
     });
     const json = await response.json();
@@ -26,7 +26,7 @@ const NoteState = (props) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("token"),
+        "auth-token": window.localStorage.getItem("token"),
       },
       body: JSON.stringify({ title, description, tag }),
     });
@@ -42,7 +42,7 @@ const NoteState = (props) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("token"),
+        "auth-token": window.localStorage.getItem("token"),
       },
     });
     // const json = response.json();
@@ -60,11 +60,10 @@ const NoteState = (props) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("token"),
+        "auth-token": window.localStorage.getItem("token"),
       },
       body: JSON.stringify({ title, description, tag }),
     });
-    // const json = response.json();
     let newNotes = JSON.parse(JSON.stringify(notes));
 
     //Logic to edit in client

@@ -5,12 +5,11 @@ import AddNote from "./AddNote";
 import { useNavigate } from "react-router";
 
 const Notes = (props) => {
-  const context =  useContext(noteContext);
+  const context = useContext(noteContext);
   const { notes, getNotes, editNote } = context;
   let navigate = useNavigate();
-  console.log(localStorage.getItem('token'))
   useEffect(() => {
-    if (localStorage.getItem('token')) {
+    if (window.localStorage.getItem("token")) {
       getNotes();
     } else {
       navigate("/login");
